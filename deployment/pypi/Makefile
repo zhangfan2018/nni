@@ -26,6 +26,7 @@ NNI_YARN_FOLDER ?= $(CWD)nni-yarn
 NNI_YARN := PATH=$(CWD)node-$(OS_SPEC)-x64/bin:$${PATH} $(NNI_YARN_FOLDER)/bin/yarn
 .PHONY: build
 build:
+	# Building version $(NNI_VERSION_VALUE)
 	python3 -m pip install --user --upgrade setuptools wheel
 	wget -q https://aka.ms/nni/nodejs-download/$(OS_SPEC) -O $(CWD)node-$(OS_SPEC)-x64.tar.xz
 	rm -rf $(CWD)node-$(OS_SPEC)-x64
